@@ -1,1 +1,2 @@
-print('novo ok')
+print('novo ok100%2' \
+'')
