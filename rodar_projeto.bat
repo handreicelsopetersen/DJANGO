@@ -1,6 +1,6 @@
 @echo off
 REM ============================================
-REM Script para rodar o projeto Django
+REM Script para rodar o projeto Django.
 REM Ativa o ambiente virtual e sobe o servidor
 REM ============================================
 
