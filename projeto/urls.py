@@ -15,8 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path
 
+def my_view(request):
+    # Lógica da sua view aqui
+    return HttpResponse("Olá, esta é a minha view!")
+
+
+from django.views.generic import RedirectView
+
 urlpatterns = [
+    path('', my_view, name='home'),
     path('admin/', admin.site.urls),
+    path('sobre/', my_view, name='sobre'),
+    path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
 ]
