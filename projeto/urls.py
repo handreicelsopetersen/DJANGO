@@ -23,11 +23,25 @@ def my_view(request):
     return HttpResponse("Olá, esta é a minha view!")
 
 
+def home(request):
+    return HttpResponse('HOME_urls_teste.py')
+
+
+def contato(request):
+    return HttpResponse('contato')
+
+
+def sobre(request):
+    return HttpResponse('sobre')
+
+
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', my_view, name='home'),
     path('admin/', admin.site.urls),
-    path('sobre/', my_view, name='sobre'),
+    path('outra-coisa-qualquer/', my_view),
+    path('', home),  # Home
+    path('sobre/', sobre),  # /sobre/
+    path('contato/', contato),  # /contato/
     path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
 ]
