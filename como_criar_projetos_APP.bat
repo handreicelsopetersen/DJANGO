@@ -26,6 +26,6 @@ python -c "import sys; print(sys.executable)"
 
 
 
-python manage.py runserver
+python manage.py startapp 'nome_do_app'
 
 pause
