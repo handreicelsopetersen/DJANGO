@@ -13,11 +13,18 @@ if errorlevel 1 (
     pause
     exit /b 1
 )
+echo VIRTUAL_ENV = %VIRTUAL_ENV%
+dir venv\Scripts\python.exe
 
 echo.
 echo Ambiente virtual ativado com sucesso!
 echo Subindo o servidor Django...
 echo.
+
+where python
+python -c "import sys; print(sys.executable)"
+
+
 
 python manage.py runserver
 
