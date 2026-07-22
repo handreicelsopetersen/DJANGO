@@ -14,26 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
+from receitas.views import home, contato, sobre
 
 def my_view(request):
     # Lógica da sua view aqui
     return HttpResponse("Olá, esta é a minha view!")
-
-
-def home(request):
-    return HttpResponse('HOME_urls_teste.py')
-
-
-def contato(request):
-    return HttpResponse('contato')
-
-
-def sobre(request):
-    return HttpResponse('sobre')
-
 
 from django.views.generic import RedirectView
 

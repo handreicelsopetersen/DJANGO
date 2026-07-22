@@ -1,9 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
-from receitas.views import home
+
+def home(request):
+    return HttpResponse('HOME_urls_teste.py - view')
 
 
-def _home2(request):
-    return HttpResponse('HOME1')
+def contato(request):
+    return HttpResponse('contato view')
+
+
+def sobre(request):
+    return HttpResponse('sobre')
+
+
+def _home(request):
+    return HttpResponse('HOME_urls_teste.py 2')
 
