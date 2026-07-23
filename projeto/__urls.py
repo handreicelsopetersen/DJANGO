@@ -17,19 +17,22 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include, path
 from django.views.generic import RedirectView
-from receitas.views import contato, home, sobre
 
-urlpatterns_BKP = [
-    path('sobre/', sobre),
-    path('contato/', contato),
-    path('receitas/', include('receitas.urls')),  # <- aqui mudou: tem prefixo 'receitas/'
-    path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
-]
 
+def home(request):
+    return HttpResponse('HOME')
+
+def contato(request):
+    return HttpResponse('contato')
+
+def sobre(request):
+    return HttpResponse('sobre')
 
 urlpatterns = [
-    path('', home),
+    path('admin/', admin.site.urls),
+    path('', home),  # Home
     path('sobre/', sobre),
     path('contato/', contato),
+    path('receitas/', include('receitas.urls')),  # prefixo pra não colidir com home
     path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
 ]
