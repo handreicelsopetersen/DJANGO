@@ -19,14 +19,6 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 from receitas.views import contato, home, sobre
 
-urlpatterns_BKP = [
-    path('sobre/', sobre),
-    path('contato/', contato),
-    path('receitas/', include('receitas.urls')),  # <- aqui mudou: tem prefixo 'receitas/'
-    path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
-]
-
-
 urlpatterns = [
     path('', home),
     path('sobre/', sobre),

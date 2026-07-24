@@ -17,14 +17,3 @@ urlpatterns = [
     path('', include('receitas.urls')),
 ]
 
-
-
-BKP_urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('receitas.urls')),
-    
-    path('sobre/', sobre),
-    path('contato/', contato),
-    path('receitas/', include('receitas.urls')),  # <- aqui mudou: tem prefixo 'receitas/'
-    path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
-]
