@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include, path
 from django.views.generic import RedirectView
-from receitas.views import contato, home, sobre
+from receitas.views import home, contato, sobre
 
 urlpatterns = [
-    path('', home),
-    path('sobre/', sobre),
-    path('contato/', contato),
+    path('', home, name='Handrei Petersen'),
+    path('contato/', contato, name='contato'),
+    path('sobre/', sobre, name='sobre'),
     path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
 ]
