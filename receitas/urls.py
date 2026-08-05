@@ -16,11 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include, path
+from receitas import views
 from django.views.generic import RedirectView
 from receitas.views import home, contato, sobre
+from. import views
+
+
 
 urlpatterns = [
     path('', home, name='Handrei Petersen'),
+    path('recipe/<int:id>/', views.recipe, name='recipe'),        
+    path('admin/', admin.site.urls),
+    path('receitas/', include('receitas.urls')),
+    path('', include('receitas.urls')),
     path('contato/', contato, name='contato'),
     path('sobre/', sobre, name='sobre'),
     path('sercompe/', RedirectView.as_view(url='https://sercompe.com.br'), name='sercompe'),
